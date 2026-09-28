@@ -6,7 +6,7 @@
     <title>Document</title>
     <script>
         function ClickMe(){
-            const btn =document.querySelector("#ClickMe");
+            const btn =document.querySelector("#clickBtn");
             btn.innerText = "Clicked!";
         }
 
@@ -24,12 +24,14 @@
     <h2 id="clickBtn" onclick="ClickMe()">Click me!</h2>
     
     <h1>inline js</h1>
-    <button id="clickBtn2" onclick="ClickMe()">Click me!</button>
-    <p>덧셈계산기</p>
-    <input type="text" id="num1" size="5">
-    <input type="text" id="num2" size="5">
-    <button id="addBtn">+</button>
-    <input type="text" id="result" readonly>
+    <button id="clickBtn2">Click me!</button>
+    <div>
+    <h2 style="color: coral; background-color: aqua; width:fit-content">덧셈계산기</h2>
+        <input type="text" id="num1" size="5">
+        <input type="text" id="num2" size="5">
+        <button id="addBtn">+</button>
+        <input type="text" id="result" readonly>
+    </div>
 </body>
 </html>
 

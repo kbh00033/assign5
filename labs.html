@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ClickMe(){
+            const btn =document.querySelector("#ClickMe");
+            btn.innerText = "Clicked!";
+        }
+
+        window.addEventListener("load", function(e){
+            let number1 = document.querySelector("#num1");
+            let number2 = document.querySelector("#num2");
+            let Result = number1("#num1") + number2("#num")
+            let buttonPush = false;
+        })
+    
+    </script>
+</head>
+<body>
+    <h1>internal js</h1>
+    <h2 id="clickBtn" onclick="ClickMe()">Click me!</h2>
+    
+    <h1>inline js</h1>
+    <button id="clickBtn2" onclick="ClickMe()">Click me!</button>
+    <p>덧셈계산기</p>
+    <input type="text" id="num1" size="5">
+    <input type="text" id="num2" size="5">
+    <button id="addBtn">+</button>
+    <input type="text" id="result" readonly>
+</body>
+</html>
+
+<script>
+    const clickBtn2 = document.querySelector("#clickBtn2");
+    clickBtn2.addEventListener("click", function(a){
+
+    })
+    
+    
+    
+</script>

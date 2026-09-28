@@ -8,13 +8,20 @@
         function ClickMe(){
             const btn =document.querySelector("#clickBtn");
             btn.innerText = "Clicked!";
+            styleName
         }
 
         window.addEventListener("load", function(e){
-            let number1 = document.querySelector("#num1");
-            let number2 = document.querySelector("#num2");
-            let Result = number1("#num1") + number2("#num")
-            let buttonPush = false;
+            const addBtn = document.querySelector("#addBtn");
+            addBtn.addEventListener("click", function(a){
+                let number1 = document.querySelector("#num1").value;
+                let number2 = document.querySelector("#num2").value;
+                let Result = Number(number1) + Number(number2); 
+                let buttonPush = false;
+                document.getElementById("result").value = Result;
+                
+            })
+    
         })
     
     </script>
@@ -35,12 +42,3 @@
 </body>
 </html>
 
-<script>
-    const clickBtn2 = document.querySelector("#clickBtn2");
-    clickBtn2.addEventListener("click", function(a){
-
-    })
-    
-    
-    
-</script>

@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let member =[
+        let members =[
                 {name:'김우성', schoolId:'22300161' ,nickName:'스즈메', attendence:'4', phone:'010-1234-5678'},
                 {name:'高坂穂乃果', schoolId:'17300161' ,nickName:'ほ', attendence:'4', phone:'070-9999-9999'},
                 {name:'北条沙都子', schoolId:'04030102' ,nickName:'ニィニィ', attendence:'3', phone:'070-8888-8888'},
-            ]
+        ]
+
+        function render(event){
+            const autoRowAdder = document.querySelector('#java_auto_add_theMemberList');
+            autoRowAdder.innerHTML = '';
+
+            members.forEach(function(person){
+                let tr = document.createElement("tr"); //tr라는 tag를 추가합니다
+
+                tr.innerHTML = `
+                    <td>${person.name}</td>
+                    <td>${person.schoolId}</td>
+                    <td>${person.nickName}</td>
+                    <td>${person.attendence}</td>
+                    <td>${person.phone}</td>
+                `;
+                autoRowAdder.appendChild(tr);
+
+            })
+
+
+
+        }
+
+        
         window.addEventListener("load", function(e){
-            
+            render();
 
         })
 
@@ -27,7 +51,16 @@
     </header>
     <main>
         <div id="adding_button">
-
+            <h1>현학기 인원 관리</h1>
+            <div class="add_box">
+                <input type="text" id="name" name="name" placeholder="이름 입력">
+                <input type="number" id="studentId" name="studentId" placeholder="학번 입력">
+                <input type="text" id="nickName" name="nickName" placeholder="별명 입력">
+                <input type="number" id="attendence" name="attendence" placeholder="출석 횟수 입력">
+                <input type="tel" id="phone" name="phone" placeholder="전화번호 입력">
+                <button>추가</button>
+            </div>
+            
         </div>
         <div id="middle_main">
             <table>
@@ -38,8 +71,7 @@
                     <th>출석 횟수</th>
                     <th>전화번호</th>
                 </tr>
-                
-
+                <tbody id="java_auto_add_theMemberList"></tbody>
             </table>
         </div>
     </main>

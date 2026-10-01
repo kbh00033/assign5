@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.addEventListener("load", function(){
+            const fruit = document.querySelector("#frult");
+            const addbtn = document.querySelector("#addbtn");
+            const list = document.querySelector("#list");
+
+            addbtn.addEventListener("click", function(){
+                const frultList = fruit.value.split(",");
+                for(const one of frultList){
+                    const li = document.createElement("li");
+                    li.textContent = one+" ";
+
+                    const btn = document.createElement("button");
+                    btn.textContent = "X";
+                    li.appendChild(btn);
+                    //btn.addEventListener("click",de)
+
+                    list.appendChild(li);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div>
-        <input type="text">
-        <button>add</button>
+        <input type="text" id="frult" placeholder="과일">
+        <input type="submit" id="addbtn">
     </div>
-    <table>
-        <tr>
-            <td>list</td>
-            <td>control</td>
-        </tr>
-        <tbody id="list"></tbody>
-    </table>
+    <ul id="list">     
+    </ul>
 </body>
 </html>

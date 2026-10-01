@@ -11,6 +11,25 @@
             styleName
         }
 
+        function push(){
+            alert("hello");
+        }
+
+
+        
+        
+
+        function checkForm(e){
+            const username = document.querySelector("#name1");
+
+            if(username.value == ''){
+                alert('이름을 써주세요!');
+                username.focus();
+                event.preventDefault();
+            }
+
+        }
+
         window.addEventListener("load", function(e){
             const addBtn = document.querySelector("#addBtn");
             addBtn.addEventListener("click", function(a){
@@ -19,8 +38,11 @@
                 let Result = Number(number1) + Number(number2); 
                 let buttonPush = false;
                 document.getElementById("result").value = Result;
-                
             })
+            const btn = document.querySelector("#btn3");
+            btn.addEventListener("click", function(e){
+                alert("you are so samrt");
+        })   
     
         })
     
@@ -32,6 +54,7 @@
     
     <h1>inline js</h1>
     <button id="clickBtn2">Click me!</button>
+    
     <div>
     <h2 style="color: coral; background-color: aqua; width:fit-content">덧셈계산기</h2>
         <input type="text" id="num1" size="5">
@@ -39,6 +62,16 @@
         <button id="addBtn">+</button>
         <input type="text" id="result" readonly>
     </div>
+    
+    <button id="btn2" onclick="push(event)">onclick!</button>
+    
+    <button id="btn3">Not onclick!</button>
+
+    <form action="e.html" method="post" onsubmit="checkForm(event)">
+        <input type="text" id="name1" name="name" placeholder="이름">
+        <input type="submit" value="전송">
+    </form>
 </body>
 </html>
+
 

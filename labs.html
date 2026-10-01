@@ -7,7 +7,7 @@
     <script>
         function ClickMe(){
             const btn =document.querySelector("#clickBtn");
-            btn.innerText = "Clicked!";
+            btn.outerHTML = "<button>Clicked!</button>";
             styleName;
         }
 
@@ -48,6 +48,12 @@
             BTN.addEventListener("click", function(e){
                 BTN.innerText = "まだまだだこのやろう！";
             })
+
+            const Origin_btn = document.getElementById("clickBtn2");
+                Origin_btn.addEventListener("click", function(){
+                    Origin_btn.outerHTML= "<h1>Clicked!</h1>";
+                })
+                
         })
     
     </script>

@@ -8,7 +8,7 @@
         function ClickMe(){
             const btn =document.querySelector("#clickBtn");
             btn.innerText = "Clicked!";
-            styleName
+            styleName;
         }
 
         function push(){
@@ -42,8 +42,12 @@
             const btn = document.querySelector("#btn3");
             btn.addEventListener("click", function(e){
                 alert("you are so samrt");
-        })   
-    
+            }) 
+
+            const BTN = document.querySelector("#studied_it_hoorey");
+            BTN.addEventListener("click", function(e){
+                BTN.innerText = "まだまだだこのやろう！";
+            })
         })
     
     </script>
@@ -71,6 +75,8 @@
         <input type="text" id="name1" name="name" placeholder="이름">
         <input type="submit" value="전송">
     </form>
+
+    <button id="studied_it_hoorey">I finished this!!</button>
 </body>
 </html>
 

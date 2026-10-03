@@ -16,14 +16,18 @@
                     const li = document.createElement("li");
                     li.textContent = one+" ";
 
-                    const btn = document.createElement("button");
-                    btn.textContent = "X";
-                    li.appendChild(btn);
-                    //btn.addEventListener("click",de)
-
+                    const dltBtn = document.createElement("button");
+                    dltBtn.textContent = "X";
+                    dltBtn.addEventListener("click", function(){
+                        li.remove();
+                    });
+                    
+                    li.appendChild(dltBtn);
                     list.appendChild(li);
                 }
             });
+
+           
         });
     </script>
 </head>

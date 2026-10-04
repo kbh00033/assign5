@@ -100,8 +100,9 @@
                 const dlt_btn = add_tag_tr.querySelector(".dlt_btn");
                 dlt_btn.addEventListener("click", function(){
                     if(confirm("삭제하면 되돌릴 수 없습니다. 삭제하시겠습니까?")){
-                        add_tag_tr.remove();
+                        members.splice(index, 1);
                         alert("삭제되었습니다");
+                        render();
                     }
                 });
                 auto_add_theMemberList.appendChild(add_tag_tr);

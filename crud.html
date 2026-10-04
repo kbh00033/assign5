@@ -15,7 +15,7 @@
         let members =[
                 {name:'김우성', studentId:'22300161' ,nickName:'스즈메', attendence:'4', phone:'010-1234-5678'},
                 {name:'高坂穂乃果', studentId:'17300161' ,nickName:'ほ', attendence:'4', phone:'070-9999-9999'},
-                {name:'北条沙都子', studentId:'04030102' ,nickName:'ニィニィ', attendence:'3', phone:'070-8888-8888'},
+                {name:'北条沙都子', studentId:'24030102' ,nickName:'ニィニィ', attendence:'3', phone:'070-8888-8888'},
         ]
 
        let isIteditingTheList = null;
@@ -101,6 +101,7 @@
                 dlt_btn.addEventListener("click", function(){
                     if(confirm("삭제하면 되돌릴 수 없습니다. 삭제하시겠습니까?")){
                         add_tag_tr.remove();
+                        alert("삭제되었습니다");
                     }
                 });
                 auto_add_theMemberList.appendChild(add_tag_tr);
@@ -128,10 +129,12 @@
                 if(clickVaildName() && clickVaildStudentIdNum() && clickVaildAttendenceNum() == true){
                     if(isIteditingTheList != null){
                         members.splice(isIteditingTheList, 1, updatedPerson);
+                        alert("신규 맴버로 등록되었습니다");
                         render();
                         isIteditingTheList = null;
                     } else {
                         members.push(updatedPerson);
+                        alert("수정되었습니다");
                         render();
                     }
 
@@ -154,7 +157,7 @@
         <header id="top" style="background-color: aquamarine;">
         <div class="w-100 d-flex justify-content-between p-4 m-1">
             <div id="top-left">                
-                <h1><strong><a href="index.html" class="text-decoration-none text-dark">HAC 인원 관리 시스템</a></h1>
+                <h1><strong class="text-decoration-none text-dark">HAC 인원 관리 시스템</h1>
             </div>
     </header>
     <main style="margin: 10px">
@@ -185,6 +188,12 @@
             </table>
         </div>
     </main>
+
+    <footer id="buttom-frame" style="background-color: aquamarine;" class="w-100 d-flex justify-content-between p-4">
+        <div id="buttom-main">             
+            <h1><strong class="text-decoration-none text-dark">HAC 인원 관리 시스템</h1>
+        </div>
+    </footer>
 
 </body>
 </html>

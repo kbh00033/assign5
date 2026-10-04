@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- 부트스트랩 아이콘 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+
     <script>
         let members =[
                 {name:'김우성', studentId:'22300161' ,nickName:'스즈메', attendence:'4', phone:'010-1234-5678'},
@@ -63,8 +70,8 @@
                     <td>${person.nickName}</td>
                     <td>${person.attendence}</td>
                     <td>${person.phone}</td>
-                    <td><button class="edit_btn">수정</button></td>
-                    <td><button class="dlt_btn">삭제</button></td>
+                    <td><button type="button" class="btn btn-success edit_btn"><i class="bi bi-pencil"></i></button></td>
+                    <td><button type="button" class="btn btn-danger dlt_btn"><i class="bi bi-trash3"></i></button></td>
                 `;        
                 
                 const editBtn = add_tag_tr.querySelector(".edit_btn");
@@ -144,32 +151,35 @@
 </head>
 <body>
     <header>
-        <div>
-            <h1>HAC 인원 관리 시스템</h1>
-        </div>
+        <header id="top" style="background-color: aquamarine;">
+        <div class="w-100 d-flex justify-content-between p-4 m-1">
+            <div id="top-left">                
+                <h1><strong><a href="index.html" class="text-decoration-none text-dark">HAC 인원 관리 시스템</a></h1>
+            </div>
     </header>
-    <main>
-        <div id="adding_button">
+    <main style="margin: 10px">
+        <div id="adding_button" style="margin: 10px">
             <h1>현학기 인원 관리</h1>
-            <div class="add_box">
-                <input type="text" id="name" name="name" placeholder="이름 입력">
-                <input type="number" id="studentId" name="studentId" placeholder="학번 입력">
-                <input type="text" id="nickName" name="nickName" placeholder="별명 입력">
-                <input type="number" id="attendence" name="attendence" placeholder="출석 횟수 입력">
-                <input type="tel" id="phone" name="phone" placeholder="전화번호 입력">
-                <button id="addBtn">등록</button>
+            <div class="add_box display: flex justify-content: center align-items: center">
+                <input type="text" id="name" name="name" style="width: 300px" class="form-control mt-1" placeholder="이름 입력">
+                <input type="number" id="studentId" name="studentId" style="width: 300px" class="form-control mt-1" placeholder="학번 입력">
+                <input type="text" id="nickName" name="nickName" style="width: 300px" class="form-control mt-1" placeholder="별명 입력">
+                <input type="number" id="attendence" name="attendence" style="width: 300px" class="form-control mt-1" placeholder="출석 횟수 입력">
+                <input type="tel" id="phone" name="phone" style="width: 300px" class="form-control mt-1" placeholder="전화번호 입력">
+                <button type="button" id="addBtn" style="margin-top: 10px" class="btn btn-primary"><i class="bi bi-person-add"></i> 등록</button>
             </div>
             
         </div>
         <div id="middle_main">
-            <table>
+            <table class="table table-striped table-responsive table-sm w-100 text-center table-bordered">
                 <tr id="top-frame">
                     <th>이름</th>
                     <th>학번</th>
                     <th>별명</th>
                     <th>출석 횟수</th>
                     <th>전화번호</th>
-                    <th>제어</th>
+                    <th>수정</th>
+                    <th>삭제</th>
                 </tr>
                 <tbody id="java_auto_add_theMemberList"></tbody>
             </table>
